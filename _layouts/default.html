@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  </head>
+
+  <body class="black">
+
+    <div class="content">
+      <h3><a href="/">{{ site.title }}</a></h3>
+      {{ content }}
+    </div>
+
+    <div class="mobtitle">
+      <h4><a href="/">{{ site.title }}</a></h4>
+			<div class="menu"><a>≡</a></div>
+    </div>
+
+    <div class="sidebar">
+      <h4><a href="/">{{ site.title }}</a></h4>
+			<div class="close"><a>X</a></div>
+      <ul>
+      {% assign cats = site.data.larakirof | map: "Category" | uniq %}
+      {% for cat in cats %}
+
+        <li>
+          <a href="#{{ row }}">{{ cat }}</a>
+        </li>
+
+      {% endfor %}
+      </ul>
+    </div>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.7.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/data.js"></script>
+    <script type="text/javascript">
+      var path = decodeURIComponent(window.location.href).split("/");
+      var title = path[path.length - 1].split("#")[0]
+			var hash  = path[path.length - 1].split("#")[1]
+			$(".sidebar > .close").on("click",function(e){
+				$(".sidebar").css("left","-360px");
+				$(".mobtitle").show();
+			})
+			$(".mobtitle > .menu").on("click",function(e){
+				$(".sidebar").css("left","0px");
+				$(".mobtitle").hide();
+			})
+    </script>
+  </body>
+</html>

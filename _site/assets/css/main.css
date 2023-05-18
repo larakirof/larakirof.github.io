@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Josefin+Sans:wght@600&display=swap");
+body {
+  background: #ffffff;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #aaa;
+  font-family: "Cutive Mono", monospace;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+   supported by Chrome, Edge, Opera and Firefox */
+}
+
+h1, h2, h3, h4, h5, h6, .navg, .fmly, .close {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:hover, a:active {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.sidebar {
+  display: none;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: -360px;
+  background: black;
+  width: 300px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid #333;
+  padding-left: 24px;
+  transition: 0.4s;
+}
+.sidebar li {
+  padding-top: 12px;
+}
+.sidebar .close {
+  cursor: pointer;
+  position: absolute;
+  top: 34px;
+  right: 12px;
+  font-size: 22px;
+}
+
+.mobtitle {
+  display: none;
+  z-index: 500;
+  position: fixed;
+  background: black;
+  width: calc(100vw - 36px);
+  height: 78px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-left: 24px;
+  border-bottom: 1px solid #333;
+}
+.mobtitle .menu {
+  cursor: pointer;
+  position: absolute;
+  top: 21px;
+  right: 12px;
+  font-size: 31px;
+}
+
+.content {
+  position: fixed;
+  padding: 24px;
+}
+.content > h3 {
+  display: inline;
+}
+.content .index {
+  display: flex;
+  flex-direction: row;
+}
+.content .index .column {
+  padding-right: 12px;
+}
+.content .index .column li {
+  margin-bottom: 6px;
+}
+.content .work {
+  position: relative;
+  width: calc(100vw - 48px);
+}
+.content .work .img {
+  background-position: center top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.content .work .fmly {
+  font-size: 16px;
+  position: absolute;
+  top: 6px;
+  right: 120px;
+}
+.content .work .fmly .sis {
+  display: inline;
+  padding-left: 12px;
+  cursor: pointer;
+}
+.content .work .navg {
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.content .work .navg .prev {
+  position: absolute;
+  top: 0;
+  right: 72px;
+}
+.content .work .navg .next {
+  position: absolute;
+  top: 0;
+  right: 36px;
+}
+.content .work .navg .back {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 600px) {
+  .sidebar, .mobtitle {
+    display: block;
+  }
+  .content {
+    margin: 0;
+    padding-top: 80px;
+  }
+  .content > h3 {
+    display: none;
+  }
+  .content .index {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title> - Lara Yılancıoğlu</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+
+  <body class="black">
+
+    <div class="content">
+      <h3><a href="/">Lara Yılancıoğlu</a></h3>
+      <div class="index">
+</div>
+
+<script type="text/javascript">
+    window.onload = function(){
+      $.each(works,function(i,e){
+        col = $("<div class='column'></div>");
+        $(".index").append(col);
+        col.append("<h4>"+Object.keys(e)[0]+"</h4>");
+        ul = $("<ul></ul>");
+        col.append(ul)
+        $.each(Object.values(e)[0],function(ii,ee){
+        console.log(Object.values(ee)[0][0])
+          ul.append("<li><a href='/work/"+Object.keys(ee)[0]+"'>"+Object.values(ee)[0][0]["Title"]+"</a></li>");
+        })
+      })
+    }
+</script>
+
+
+    </div>
+
+    <div class="mobtitle">
+      <h4><a href="/">Lara Yılancıoğlu</a></h4>
+			<div class="menu"><a>≡</a></div>
+    </div>
+
+    <div class="sidebar">
+      <h4><a href="/">Lara Yılancıoğlu</a></h4>
+			<div class="close"><a>X</a></div>
+      <ul>
+      
+      
+
+        <li>
+          <a href="#">Map</a>
+        </li>
+
+      
+
+        <li>
+          <a href="#">Crossword</a>
+        </li>
+
+      
+      </ul>
+    </div>
+
+    <script type="text/javascript" src="/assets/js/jquery-3.7.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/data.js"></script>
+    <script type="text/javascript">
+      var path = decodeURIComponent(window.location.href).split("/");
+      var title = path[path.length - 1].split("#")[0]
+			var hash  = path[path.length - 1].split("#")[1]
+			$(".sidebar > .close").on("click",function(e){
+				$(".sidebar").css("left","-360px");
+				$(".mobtitle").show();
+			})
+			$(".mobtitle > .menu").on("click",function(e){
+				$(".sidebar").css("left","0px");
+				$(".mobtitle").hide();
+			})
+    </script>
+  </body>
+</html>
